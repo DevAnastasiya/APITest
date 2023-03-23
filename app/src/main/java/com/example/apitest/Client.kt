@@ -1,12 +1,16 @@
 package com.example.apitest
 
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+
 class Client {
 
-    val BASE_URL = "https://api.github.com/"
+    private val baseUrl = "https://api.github.com/"
 
-    val service = Retrofit.Builer()
-        .baseUrl(BASE_URL)
+    private val retrofit = Retrofit.Builder()
+        .baseUrl(baseUrl)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-        .create(GitHibService::class.java)
+
+    val service = retrofit.create(GitHubService::class.java)
 }

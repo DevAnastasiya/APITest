@@ -22,4 +22,6 @@
         </activity>
     </application>
 
+    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
+
 </manifest>
